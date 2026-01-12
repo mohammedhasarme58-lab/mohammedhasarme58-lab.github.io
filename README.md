@@ -1,1 +1,55 @@
-# mohammedhasarme58-lab.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            color: brown;
+        }
+        input {
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Search</h1>
+    <p>Current students: Alice, Bob, Charlie</p>
+    
+    <input type="text" id="studentInput" placeholder="Enter a name">
+    <button onclick="searchStudent()">Search</button>
+    
+    <div id="result"></div>
+
+    <script>
+        const students = ["Alice", "Bob", "Charlie"];
+
+        function searchStudent() {
+            const input = document.getElementById("studentInput").value;
+            const resultDiv = document.getElementById("result");
+
+            if (students.includes(input)) {
+                resultDiv.textContent = `✓ "${input}" is in the student list!`;
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = `✗ "${input}" is NOT in the student list!`;
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
